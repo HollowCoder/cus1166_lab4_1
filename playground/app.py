@@ -1,3 +1,4 @@
+from app import app
 from flask import Flask, render_template, request
 #from flask_sqlalchemy import SQLAlchemy
 
@@ -21,3 +22,6 @@ def welcome():
 @app.route("/roster/<int:grade_view>")
 def roster():
     return render_template("roster.html", class_roster=class_roster, grade_view=grade_view)
+
+if __name__ == '__main__':
+    app.run()
