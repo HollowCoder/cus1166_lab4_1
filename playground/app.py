@@ -1,6 +1,7 @@
-from __init__ import app
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__, template_folder='templates')
 
 class_roster = [('Andrew', 'Senior', '95'), ('Joe', 'Senior', '90'),
                 ('Chris', 'Junior', '95'), ('Heather', 'Senior', '100'),
@@ -8,6 +9,7 @@ class_roster = [('Andrew', 'Senior', '95'), ('Joe', 'Senior', '90'),
                 ('Isaac', 'Sophomore', '90')]
 
 @app.route("/")
+@app.route("/index/")
 def index():
     return render_template("index.html")
 
