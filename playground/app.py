@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 #from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 class_roster = [('Andrew', 'Senior', '95'), ('Joe', 'Senior', '90'),
                 ('Chris', 'Junior', '95'), ('Heather', 'Senior', '100'),
