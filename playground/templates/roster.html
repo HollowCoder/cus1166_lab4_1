@@ -1,9 +1,19 @@
 {% extends 'layout.html' %}
-
+{% block content %}
+<html>
 {% if grade_view == 0 %}
+    {% for name, grade, standing in class_roster %}
+        <div>
+            <p>
+                {{class_roster.name}}
+            </p>
+        </div>
+    {% endfor %}
+{% elif grade_view == 1 %}
 
-{% elif grade_view == 0 %}
-
-{% elif grade_view == 0 %}
+{% elif grade_view == 2 %}
 
 {% endif %}
+</html>
+
+{% endblock %}
