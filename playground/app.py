@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
-#from flask_sqlalchemy import SQLAlchemy
+from student import Student
 
 app = Flask(__name__)
+    
 
-class_roster = [('Andrew', 'Senior', '95'), ('Joe', 'Senior', '90'),
-                ('Chris', 'Junior', '95'), ('Heather', 'Senior', '100'),
-                ('Theo', 'Freshman', '90'), ('Eric', 'Junior', '90'),
-                ('Isaac', 'Sophomore', '90')]
+class_roster = [Student('Andrew', 'Senior', 95), Student('Joe', 'Senior', 90),
+                Student('Chris', 'Junior', 95), Student('Heather', 'Senior', 100),
+                Student('Theo', 'Freshman', 90), Student('Eric', 'Junior', 90),
+                Student('Isaac', 'Sophomore', 90)]
 
 @app.route("/")
 @app.route("/index/")
@@ -14,7 +15,7 @@ def index():
     return render_template("index.html")
 
 @app.route("/welcome/<string:student_name>")
-def welcome():
+def welcome(student_name):
 
     return render_template("welcome.html", student_name=student_name)
 
